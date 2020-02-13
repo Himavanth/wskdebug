@@ -17,9 +17,9 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm i @adobe/aio-cli
-    - run: aio config
     - run: npm install
+    - run: npm install -g @adobe/aio-cli
+    - run: aio config
     - run: npm run build --if-present
     - run: npm test
       env:
